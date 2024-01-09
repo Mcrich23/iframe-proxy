@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFrame Loader</title>
+</head>
+<body>
+
+<script>
+    // Function to get the URL parameter from the URL path
+    function getURLParameter(parameter) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(parameter);
+    }
+
+    // Get the URL from the path or provide a default URL
+    const urlToLoad = getURLParameter('url') || 'https://example.com';
+
+    // Create an iframe and set its source to the specified URL
+    const iframe = document.createElement('iframe');
+    iframe.src = urlToLoad;
+    iframe.style.width = '100%';
+    iframe.style.height = '100vh';
+    iframe.style.border = 'none';
+
+    // Append the iframe to the body
+    document.body.appendChild(iframe);
+</script>
+
+</body>
+</html>
